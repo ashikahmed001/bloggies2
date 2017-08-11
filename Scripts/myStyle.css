@@ -1,0 +1,258 @@
+.navStyle {
+    border: 0;
+    letter-spacing: 5px;
+    position: static;
+    right: 50px;
+}
+
+.navStyle li:hover {
+    background-color: #EF92A5;
+    text-decoration: none;
+    background: transparent !important;
+}
+
+.mySlides {
+    width: 100%;
+}
+
+.w3-button:hover {
+    background: transparent !important;
+}
+
+h1 {
+    font-style: bold;
+    color: white;
+}
+
+nav {
+    background-color: #00e8d0;
+}
+
+
+/*.carouselImage {
+        height: 720px;
+        width: 1280px;
+    }*/
+
+.carouselImage {
+    border: 3px solid black;
+}
+
+.accrdnHeader {
+    position: absolute;
+    top: 30px;
+}
+
+.divMain {
+    position: relative;
+    top: 150px;
+}
+
+div.accrdnHeader>div.headDIV {
+    color: purple;
+    cursor: pointer;
+}
+
+hr {
+    width: 100%;
+}
+
+.nav>li>a {
+    color: white;
+    font-weight: 500;
+}
+
+.nav li a:focus,
+.nav li a:hover {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0);
+    text-shadow: 0 0 7px white;
+}
+
+li.active a:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 10px solid #00e8d0;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    position: absolute;
+    z-index: 1;
+    /* top: 100%; */
+    left: 50%;
+    margin-left: -5px;
+    bottom: -40%;
+}
+
+body {
+    background-image: url("../Images/pattern.jpg");
+}
+
+h3 {
+    left: 100px;
+}
+
+.fa-forumbee {
+    color: white;
+}
+
+div.jumbotron {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+#pName {
+    font-size: 50px;
+    color: #00b7a4;
+    font-family: monospace;
+    letter-spacing: 10px;
+}
+
+#imgMyself {
+    width: 50%;
+    border: 5px solid #87d0d0;
+}
+
+.h4Programmer {
+    font-family: monospace;
+    letter-spacing: 4px;
+    font-size: 30px;
+    padding-top: 25%;
+    text-transform: lowercase;
+    color: rgba(0, 0, 0, 0.64);
+}
+
+.h4Designer {
+    font-size: 90px;
+    letter-spacing: 5px;
+    font-family: Parchment;
+    padding-top: 25%;
+    color: rgba(0, 0, 0, 0.64);
+}
+
+#h2Name {
+    padding-top: 10%;
+    font-size: 30px;
+    font-family: Rockwell;
+    color: #23a795;
+    letter-spacing: 3px;
+}
+
+.divNews {
+    padding-top: 20px;
+    text-align: justify;
+}
+
+.newsName {
+    font-size: 50px;
+    font-family: wallStreet;
+    text-transform: capitalize;
+}
+
+hr {
+    border: 1px solid #bdbdbd;
+}
+
+.imgLoading {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.h2Error {
+    text-align: center;
+    font-size: 45px;
+    font-family: monospace;
+}
+
+.fa-thumbs-o-down {
+    color: darkblue;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: wallStreet;
+    src: url("../Images/escrow.otf");
+}
+
+@font-face {
+    font-family: raleway;
+    src: url("../fonts/Raleway-Medium.ttf");
+}
+
+strong {
+    font-family: cursive;
+}
+
+.titleStyle {
+    font-family: raleway;
+    font-weight: 600;
+}
+
+.divNew {
+    position: relative;
+    text-align: justify;
+    padding-top: 3%;
+}
+
+.w3-card {
+    background-color: white;
+    min-height: 480px;
+    max-height: 650px;
+}
+
+h5 {
+    text-align: right;
+    font-style: oblique;
+    font-size: 13px;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+}
+
+#divIcon {
+    text-align: center;
+}
+
+#divIcon >div>a {
+    width: 35%;
+}
+
+#divIcon >div>h5 {
+    font-family: raleway;
+    text-align: center;
+    font-size: 15px;
+}
+
+p {
+    font-family: sans-serif;
+}
+.divFoot {
+    top:280%;
+    height: 150px;
+    text-align: center;
+    width: 100%;    
+    background-image: url('../Images/m1.jpg');
+    position: absolute;
+    color: white;
+}
+#imgNews{
+    max-height: 311px;
+    max-width: 554px;
+    min-width: 100%;
+}
+
+.w3-displayCust-left{
+    top:2%;
+    left:0%;
+    position: absolute;
+}
+
+.w3-displayCust-right{
+    top:2%;
+    right:0%;
+    position: absolute;
+}
+
