@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Blogger</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="icon" href="Images/news.png">
+    <link rel="stylesheet" href="Scripts/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="Scripts/bootstrap.min.js" asynch></script>
+    <script src="Scripts/angular.min.js" asynch></script>
+    <link rel="stylesheet" href="Scripts/w3.css">
+    <link rel="stylesheet" href="Scripts/font-awesome.min.css">
+    <link rel="stylesheet" href="Animate/Animate.css">
+    <script src="Angular Scripts/myAngular.js"></script>
+    <script src="Angular Scripts/moment.js"></script>
+    <link rel="stylesheet" href="Scripts/myStyle.css">
+</head>
+
+<body>
+    <div class="container-fluid" ng-app="myModule" ng-controller="carouselController">
+        <div class="row">
+            <!--header-->
+            <nav class="navbar">
+                <div class="navbar-header animated jello">
+                    <h1 style="float:left"><i class="fa fa-forumbee"></i>&nbsp;BloggiE's<sup>&nbsp;2</sup></h1>
+                </div>
+                <ul class="nav navbar-nav navbar-right navStyle">
+                    <li ng-class="{active: tabShow===0,'animated bounceIn': tabShow===0}"><a href="#" ng-click="tabShow=0">Home</a></li>
+                    <li ng-class="{active: tabShow===1,'animated bounceIn': tabShow===1}"><a href="#" ng-click="tabShow=1">Posts</a></li>
+                    <li ng-class="{active: tabShow===2,'animated bounceIn': tabShow===2}"><a href="#" ng-click="tabShow=2">About</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id='divMainContext'>
+            <!--<img src="Images/squares.gif" class="imgLoad" ng-show="Loading" />-->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " ng-show="tabShow===0" class="divMain" ng-class="{'animated fadeIn': tabShow===0}">
+                <!--MainContent-->
+                <div class="jumbotron">
+                    <div class="carouselImage w3-center">
+                        <img class="mySlides img-rounded" src="Images/grand_theft_auto_gta_5-1920x1080.jpg" ng-show="display===0" ng-class="{'animated fadeIn': display===0}" />
+                        <img class="mySlides" src="Images/gta_5___trinity_wallpaper_by_dkkain-d60hiw2.jpg" ng-show="display===1" ng-class="{'animated fadeIn': display===1}" />
+                        <img class="mySlides" src="Images/maxresdefault.jpg" ng-show="display===2" ng-class="{'animated fadeIn': display===2}" />
+                        <img class="mySlides" src="Images/1920x1080-data-out-50-4339643-gta-5-wallpaper-hd.jpg" ng-show="display===3" ng-class="{'animated fadeIn': display===3}" />
+                        <img class="mySlides" src="Images/b1ae573f913204c0f8819e4762f946b4.jpg" ng-show="display===4" ng-class="{'animated fadeIn': display===4}" />
+                        <img class="mySlides" src="Images/Gta 5 Wallpaper hd 1080p Gta 5 Michael Wallpaper hd.jpg" ng-show="display===5" ng-class="{'animated fadeIn': display===5}" />
+                        <img class="mySlides" src="Images/GTA-5-Trevor-HD-Desktop-Wallpaper.jpg" ng-show="display===6" ng-class="{'animated fadeIn': display===6}" />
+                        <button class="w3-button w3-black w3-display-left" ng-click="carouselNavigator(-1)" ng-show="display>0">&#10094;</button>
+                        <button class="w3-button w3-black w3-display-right" ng-click="carouselNavigator(1)" ng-show="display<domSlide.length-1">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " ng-show="tabShow===1" class="divMain" ng-class="{'animated fadeIn': tabShow===1}">
+                <!--MainContent-->
+                <div ng-controller='apiController'>
+                    <div ng-show="!Loading && !error">
+                        <div ng-controller='thumbnailController as thumbC'>
+                            <div>
+                                <div class="row col-lg-12 newsThumb" id="divIcon" ng-show="thumbDisplay===-1" ng-class="{'animated fadeIn': thumbDisplay===-1}">
+                                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                        <a href="#" ng-click="apiCall('bbc-sport')"><img src="Images/newsicon/bbcs.png" class="img-circle" /></a>
+                                        <h5>BBC Sport</h5>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                        <a href="#" ng-click="apiCall('nfl-news')"><img src="Images/newsicon/nfl.png" class="img-circle" /></a>
+                                        <h5>NFL News</h5>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                        <a href="#" ng-click="apiCall('the-sport-bible')"><img src="Images/newsicon/sb.png" class="img-circle" /></a>
+                                        <h5>The Sports Bible</h5>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                        <a href="#" ng-click="apiCall('espn')"><img src="Images/newsicon/espn.png" class="img-circle" /></a>
+                                        <h5>ESPN</h5>
+                                    </div>
+                                </div>
+                                <div class="row col-lg-12 newsThumb" id="divIcon" ng-show="thumbDisplay===0" ng-class="{'animated fadeIn': thumbDisplay===0}">
+                                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                        <a href="#" ng-click="apiCall('the-wall-street-journal')"><img src="Images/newsicon/wsj.png" class="img-circle" /></a>
+                                        <h5>THE WALL STREET JOURNAL</h5>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                        <a href="#" ng-click="apiCall('bbc-news')"><img src="Images/newsicon/bbc.png" class="img-circle" /></a>
+                                        <h5>BBC News</h5>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                        <a href="#" ng-click="apiCall('the-new-york-times')"><img src="Images/newsicon/nwt.png" class="img-circle" /></a>
+                                        <h5>New York Times</h5>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                        <a href="#" ng-click="apiCall('the-hindu')"><img src="Images/newsicon/thehindu.png" class="img-circle" /></a>
+                                        <h5>The Hindu</h5>
+                                    </div>
+                                </div>
+                                <div class="row col-lg-12 newsThumb" id="divIcon"  ng-show="thumbDisplay===1" ng-class="{'animated fadeIn': thumbDisplay===1}">
+                                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                        <a href="#" ng-click="apiCall('the-verge')"><img src="Images/newsicon/v.png" class="img-circle" /></a>
+                                        <h5>The Verge</h5>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                        <a href="#" ng-click="apiCall('hacker-news')"><img src="Images/newsicon/hn.png" class="img-circle" /></a>
+                                        <h5>Hacker News</h5>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                        <a href="#" ng-click="apiCall('techcrunch')"><img src="Images/newsicon/te.png" class="img-circle" /></a>
+                                        <h5>TechCrunch</h5>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                        <a href="#" ng-click="apiCall('new-scientist')"><img src="Images/newsicon/newscientist.png" class="img-circle" /></a>
+                                        <h5>New Scientist</h5>
+                                    </div>
+                                </div>
+                                <button class="w3-button w3-black w3-displayCust-left" ng-click="thumbClick(-1)" ng-show="thumbDisplay>-1">&#10094;</button>
+                                <button class="w3-button w3-black w3-displayCust-right" ng-click="thumbClick(1)" ng-show="thumbDisplay<1">&#10095;</button>
+                            </div>
+                        </div>
+                        <img src="Images/squares2.gif" ng-show="loading" alt="Loading" class="imgLoading" />
+                        <!-- <h2 class="newsName" ng-hide="Loading">{{NewsSource()}}</h2> -->
+                        <!-- <div ng-repeat="article in data" class="divNews">
+                             <a ng-href="{{article.url}}" class="col-lg-9"><h3 style="font-family: wallStreet" ng-bind="article.title"></h3></a>
+                            <p class="pull-right" class="col-lg-3"><strong>{{article.author}} &nbsp;</strong>{{article.publishedAt |  date: "medium"}}</p>
+                            <p class="col-lg-12" ng-bind="article.description"></p>
+                            <hr>
+                        </div> -->
+                        <div class="col-lg-4 col-md-6 divNew" ng-repeat="article in data" ng-show="!Loading && !error" ng-class="{'animated fadeIn': !Loading && !error}">
+                            <div class="w3-card col-lg-12">
+                                <a ng-href="{{article.url}}"><img alt="Hey" id="imgNews" ng-src="{{article.urlToImage}}" width="100%" /></a>
+                                <!-- <a ng-href="{{article.url}}"><img alt="Hey" id="imgNews" ng-src="{{article.urlToImage}}" width="100%" onerror=this.src="Images/news.png" /></a> -->
+                                <h4 class="titleStyle">{{article.title}}</h4>
+                                <h5>{{article.author}}&nbsp;,{{article.publishedAt | date:"medium"}}</h5>
+                                <p>{{article.description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-show="error && !Loading" class="animated shake">
+                        <h2 class="h2Error">Oops ! Something Went Wrong &nbsp;<a class="fa fa-thumbs-o-down animated pulse infinite" href="#" ng-click="apiCall('the-wall-street-journal')"></a></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " ng-show="tabShow===2" class="divMain">
+                <!--MainContent-->
+                <!-- <h2>About me </h2> -->
+                <div>
+                    <div class="col-lg-4">
+                        <h4 class="animated slideInLeft w3-center h4Programmer">&lt;Programmer&gt;<i class="animated flash infinite">_</i></h4>
+                    </div>
+                    <div class="col-lg-4 w3-center">
+                        <img src="Images/Ashik.jpg" id="imgMyself" class="w3-circle animated zoomIn" />
+                        <h2 id="h2Name" class="animated slideInUp">I'm Ashik</h2>
+                    </div>
+                    <div class="col-lg-4">
+                        <h4 class="animated bounceInRight w3-center h4Designer">Designer</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="divFoot" ng-show="tabShow ===1">
+            
+            <footer>
+                <h2>You have reached the End of the Page</h2>
+            </footer>
+        </div> -->
+    </div>
+</body>
+
+</html>
