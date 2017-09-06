@@ -128,7 +128,7 @@
                         </div> -->
                         <div class="col-lg-4 col-md-6 divNew" ng-repeat="article in data" ng-show="!Loading && !error" ng-class="{'animated fadeIn': !Loading && !error}">
                             <div class="w3-card col-lg-12">
-                                <a ng-href="{{article.url}}"><img alt="Hey" id="imgNews" ng-src="{{article.urlToImage}}" onerror="this.onerror=null;this.src='Images/image-not-found.png'" width="100%" /></a>
+                                <a ng-href="{{article.url}}"><img id="imgNews" ng-src="{{article.urlToImage}}" onerror="this.onerror=null;this.src='Images/image-not-found.png'" width="100%" /></a>
                                 <!-- <a ng-href="{{article.url}}"><img alt="Hey" id="imgNews" ng-src="{{article.urlToImage}}" width="100%" onerror=this.src="Images/news.png" /></a> -->
                                 <h4 class="titleStyle">{{article.title}}</h4>
                                 <h5>{{article.author}}&nbsp;,{{article.publishedAt | date:"medium"}}</h5>
